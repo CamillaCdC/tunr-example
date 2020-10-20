@@ -1,2 +1,5 @@
 <h2>Showing Mixtape: <%= @mixtape.title %></h2>
 
+<% @mixtape.images.each do |image| %>
+  <%= cl_image_tag(image) %>
+<% end %>

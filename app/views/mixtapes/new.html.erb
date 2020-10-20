@@ -1,9 +1,12 @@
 <h1>New Mixtape</h1>
 
-<%= form_for @mixtape do |f| %>
+<%= form_for(@mixtape, :html => {:multipart => true}) do |f| %>
 
   <%= f.label :title %>
   <%= f.text_field :title, :placeholder => 'Code James' %>
+
+  <%= f.label "Mixtape Image" %>
+  <%= f.file_field :images, :multiple => true %>
 
   <%= f.submit %>
 

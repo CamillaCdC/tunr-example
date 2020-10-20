@@ -8,6 +8,13 @@ class MixtapesController < ApplicationController
   def create
     # create the mixtape
     mixtape = Mixtape.create mixtape_params
+    # raise :hell
+    if params[:mixtape][:images].present?
+      params[:mixtape][:images].each do |image|
+        req = Cloudinary::Uploader.upload(image)
+        mixtape.images << req["public_id"]
+      end
+    end
     # associate the mixtape with the current user
     @current_user.mixtapes << mixtape
     # redirect_to root_path
