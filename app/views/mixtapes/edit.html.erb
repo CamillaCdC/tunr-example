@@ -1,0 +1,12 @@
+<h2>Edit Mixtape: <%= @mixtape.title %></h2>
+
+<%= form_for @mixtape do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, :placeholder => 'Code James' %>
+  
+  <br>
+
+  <%= f.submit %>
+
+<% end %>

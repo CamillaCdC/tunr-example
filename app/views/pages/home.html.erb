@@ -1,6 +1,13 @@
 <h1>Home Page</h1>
-<p>Welcome to MOMA</p>
+<p>Welcome to mixtapes</p>
 
 <% if @current_user.present? %>
-  <p>You are currently logged in as <%= @current_user.email %></p>
+  <p>You are currently logged in as <%= @current_user.email %>, <%= @current_user.id %></p>
+
+  <% @current_user.mixtapes.each do |m| %>
+  
+    <p><%= link_to m.title, mixtape_path(m.id) %></p>
+
+  <% end %>
+  
 <% end %>

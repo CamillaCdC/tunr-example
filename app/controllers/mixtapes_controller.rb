@@ -14,8 +14,16 @@ class MixtapesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @mixtape = Mixtape.find params[:id]
+  end
+
+  def edit
+    @mixtape = Mixtape.find params[:id]
+  end
+
   private
   def mixtape_params
-    params.require(:mixtape).permit(:title)
+    params.require(:mixtape).permit(:title, :id)
   end
 end

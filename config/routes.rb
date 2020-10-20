@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destory'
 
-  resources :mixtapes, :only => [:new, :create]
+  resources :mixtapes, :only => [:new, :create, :show, :edit]
 end
