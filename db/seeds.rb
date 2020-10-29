@@ -4,7 +4,7 @@ u2 = User.create :email => 'craigsy@ga.co', :password => 'chicken', :admin => tr
 puts "#{ User.count } users."
 
 Song.destroy_all
-s1 = Song.create :title => 'Have A Safe Trip Dear'
+s1 = Song.create :title => "Have A Safe Trip Dear"
 s2 = Song.create :title => 'Toxic'
 s3 = Song.create :title => "Don't Ask Me To Dance"
 s4 = Song.create :title => 'Gut Feeling'
